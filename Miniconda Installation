@@ -1,0 +1,21 @@
+# Method to install Miniconda Pyhton on Unbuntu 14.04
+#Why miniconda- small size and anaconda is huge and install specific packages
+Visit website: conda.io/miniconda.html 
+Right-click on the Linux installation tab(64/32 bit) and select copy the link location
+Open terminal and type : wget -c <paste_link> and press enter
+Open the folder where the file is downloadedusing the cd command
+Type : ls -ltr 
+You will see the list of all the files in the folder and ensure that it contains the Miniconda file
+Now since it is restricted you need to open it uisng : chmod +mod <type the filename>
+Now : ./<type the filename>
+The installation process begins -press enter and yes when asked
+This might take time.
+Next open a new terminal and type: source .bashrc (no output) 
+Type: conda (shows the installed descritpion)
+To see the packages type : conda list
+To update conda: conda upadate conda
+To install extra packages: conda install numpy 
+same : conda install matplotlib
+conda install scipy
+or conda install numpy matplotlib scipy
+Done

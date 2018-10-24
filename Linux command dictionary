@@ -1,0 +1,8 @@
+cd <filename>     # Open up a new folder
+cd-             # Go back in folder
+ls -ltr           #To list all the files in a folder
+chomd +x <filename>  #Remove restriction on a folder for opening up
+python <filename>  #Run a python program from terminal
+wget <url>          #Download a software from website
+cd ..                #navigate to one directry level
+cd                  #navigate to home directory level

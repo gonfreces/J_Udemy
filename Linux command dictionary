@@ -1,8 +1,35 @@
-cd <filename>     # Open up a new folder
-cd-             # Go back in folder
-ls -ltr           #To list all the files in a folder
-chomd +x <filename>  #Remove restriction on a folder for opening up
-python <filename>  #Run a python program from terminal
-wget <url>          #Download a software from website
-cd ..                #navigate to one directry level
-cd                  #navigate to home directory level
+cd <filename>            # Open up a new folder
+cd-                      # Go back in folder
+ls -ltr                  # To list all the files in a folder
+chmod +x <filename>      # Remove restriction on a folder for opening up
+python <filename>        # Run a python program from terminal
+wget <url>               # Download a software from website
+cd ..                    # Navigate to one directry level
+cd                       # Navigate to home directory level
+lscpu                    # See all the details of CPU -Output:for 64 bit:
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    2
+Core(s) per socket:    2
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 69
+Model name:            Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+Stepping:              1
+CPU MHz:               2867.096
+CPU max MHz:           3100.0000
+CPU min MHz:           800.0000
+BogoMIPS:              5187.85
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              4096K
+NUMA node0 CPU(s):     0-3
+
+cat /proc/cpuinfo        # See the processor details - clflush size: 64 then 64 bit

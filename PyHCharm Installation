@@ -1,0 +1,10 @@
+// Download PyCharm from the official website based on your OS: https://www.jetbrains.com/pycharm/download/#section=linux
+// Create a new folder in a new directory for the pycharm file
+// Unzip the file there uisng Archive Manager or use: 
+cd <folder address>
+tar -xzf pycharm-edu-2018.2.tar.gz 
+// Open the unzipped folder
+cd pycharm-edu-2018.2
+cd bin // Open bin folder inside the main pycharm folder
+sudo chmod +x pycharm.sh // Then enter the password 
+./pycharm.sh //Run the ide

@@ -1,0 +1,33 @@
+# Use this with the complete assignment folder
+# x and t will be given as input
+# You have to calculate the next value of x as in the next x at which the car will be present
+# Also you have to calculate veloity of the car using the given/current x and t and previous x and t
+# To add any new packages to pycharm follow: file - settings - project interpreter - gear symbol - select the environment as in the version
+# then come back - + symbol at right side - search your package - install - you will find it in th list of packages
+import numpy as np
+from sim.sim1d import sim_run
+
+# Simulator options.
+options = {}
+options['FIG_SIZE'] = [8,8]
+options['CONSTANT_SPEED'] = False
+
+class KalmanFilterToy:
+    def __init__(self):
+        self.v = 0
+        self.prev_x = 0
+        self.prev_t = 0
+    def predict(self,t):
+        xn = self.prev_x + self.v*(t - self.prev_t)
+        prediction = xn
+        return prediction
+    def measure_and_update(self,x,t):
+        measured_v = (x - self.prev_x)/(t - self.prev_t)
+        self.v = measured_v
+
+        self.prev_x = x
+        self.prev_t = t
+        return
+
+
+sim_run(options,KalmanFilterToy)

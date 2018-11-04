@@ -23,7 +23,7 @@ class KalmanFilterToy:
         return prediction
     def measure_and_update(self,x,t):
         measured_v = (x - self.prev_x)/(t - self.prev_t)
-        self.v = measured_v
+        self.v = measured_v # If you make the constant speed false then use this:self.v = self.v*0.6 + measured_v*0.4 
 
         self.prev_x = x
         self.prev_t = t
@@ -31,3 +31,23 @@ class KalmanFilterToy:
 
 
 sim_run(options,KalmanFilterToy)
+# dedcution:
+Assume a and b as weightages in  : self.v = self.v * a + measured_v * b
+See if you have:
+Case I:  a > b
+        Then the velocity calculated reaches the actual value:
+        Smoothly - longest steady state time
+        Error is very low - Oscillations after steady state is low
+        Longer time to reach the actual value
+Case II:  a = b
+        Then the velocity calculated reaches the actual value:
+        Faster than before-steeper curve
+        Error is low but not as the earlier one
+        Realative shorter time to reach the actual value
+Case III:  a < b
+        Then the velocity calculated reaaches the actual value:
+        Steeply - fastest - shortest steady state time
+        Error is very high -  Oscillations after steady state is high
+        Shortest time to reach the actual value
+        
+This is just line Kp, Kd and Ki.

@@ -51,3 +51,9 @@ Case III:  a < b
         Shortest time to reach the actual value
         
 This is just line Kp, Kd and Ki.
+
+You can also think of it as:  self.v = self.v + X * (measured_v - self.v)
+So as you change the X, you change the weightage to the change.
+It's a trade-off between how fast the system reacts and how small the error is.
+
+

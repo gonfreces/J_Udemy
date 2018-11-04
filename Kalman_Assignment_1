@@ -36,7 +36,7 @@ Assume a and b as weightages in  : self.v = self.v * a + measured_v * b
 See if you have:
 Case I:  a > b
         Then the velocity calculated reaches the actual value:
-        Smoothly - longest steady state time
+        Smoothly - longest response state time
         Error is very low - Oscillations after steady state is low
         Longer time to reach the actual value
 Case II:  a = b
@@ -46,7 +46,7 @@ Case II:  a = b
         Realative shorter time to reach the actual value
 Case III:  a < b
         Then the velocity calculated reaaches the actual value:
-        Steeply - fastest - shortest steady state time
+        Steeply - fastest - shortest response state time
         Error is very high -  Oscillations after steady state is high
         Shortest time to reach the actual value
         

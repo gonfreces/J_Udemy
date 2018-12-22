@@ -1,0 +1,74 @@
+Kalman Assignment 2
+
+Basic equations:
+
+x(k+1) = A(orF) * x(k) + B * u(k) + w(k)
+
+w(k) is the process noise
+
+z(k+1) = H * x(k) + v(k)
+
+v(k) is the measurement noise 
+
+R = Cov(v(k))
+
+Points:
+
+Linear algebra use
+
+Equations of motion:
+
+x(t+1) = x(t) + xdot*dt
+y(t+1) = y(t) + ydot*dt
+
+X -  state vector 
+X = [ x y xdot ydot]'
+
+F - State transition matrix
+F = [1  0  dt  0
+     0  1  0   dt] 
+X (t+1) = F * X(t)
+
+P - Uncertainity matrix - n(states) * n(states)
+P = [p1 0  0  0
+     0  p2 0  0
+     0  0  p3 0
+     0  0  0 p4]
+Represents the uncertainity in the estimated values of the system. 
+It is the difference between the actual values and estimated values.
+Higher the value, more certian you are.
+Zero means the uncertainity is highest and from o/p the estimate error keeps on increasing
+If velocity uncertinity is low, then vel estimate goes above the cual value starting from zero and then comes down on it. - overshoot
+Lower the x uncertainity, higher the value of p1 and higher the settling time and lesser the overshoot.
+
+H - Measurement matrix - n(measurements) * n(states)
+H = [ a 0;
+      b 0;]
+Shows the parameter that is measured. Always has values 1/0.
+
+R - Measurement Uncertainity - Error in sensor/hardware - n(measurements) * n(measurements)
+R = [ r1 0
+      0  r2 ]
+Increasing R increases the error settling time and the maximum error estimate
+
+
+Algorithm Flow:
+ 
+Prediction/Time Update:
+ 
+x(k) = F * x(k-1)
+P(k) = F * P(k-1) * F'
+      
+Correction/Measurement update:
+
+Z = measurement matrix (row matirx)
+Error = E = Z' - H*x
+S = H * P * H' + R
+K = P * H' * inverse(S)
+x(k+1) = x(k) + K * E
+P(K+1) = (I - K * H) * P
+
+It's basically your are assigning weightage to past estimated and curent measurement value and changing it real time.
+
+
+

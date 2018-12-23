@@ -1,0 +1,38 @@
+Kalman_assignment_3
+
+2-D motion of the car-  Apply kalman filter -/ green box - actual position of car -/ blue box -estimated position
+Bonus - car driving in circle - current state model won't work well - because - build a new state model
+
+Objective: 
+- Learn to build state model for 2-D
+- Understand the significance of P and R
+- Bonus - Build state model with 5 states - angle of car - velcoity vector  - angular velocity added instaed of xdot and ydot
+
+Without added error -  when turining or driving in circle - estimates is the worst
+
+Changes in R are afffecting more than P
+
+Normal Straight drive:
+
+Increase P - better estimate
+Increase R -  worse estimate - more overshoot while turning - hihger rise time - slow reaction
+
+Circular drive:
+
+R - decrease - estimate better - lower rise and settling time - very low overshoot
+At low R  and when error added in P = 0.1, changes in P don't have much effect on estimate.
+At high R and when error added in P = 0.1, increase in P -  better estimate - constant error - fast reaction - but still not good as high R estimate
+
+Increase in added error - Increases overshoot and settling time
+
+When you implement five states system:
+
+X = [ x
+      y
+      v
+      theta
+      theta_dot]  where v is the velocity magnitude and theta is the angle of the car's heading
+      
+The state matrices will change acoordingly.
+Result -  Improved estimated values - follows very closely - fast reaction
+       

@@ -4,6 +4,8 @@ Imagine Kalman filter as:
 
 x(k) = K(k) * z(k) + (1 - K(k)) * x(k-1) where K is an instant of time
 So basically weigtage to old estimates and current measurement such that both add upto 1 and therefore are inversely proportional.
+(http://bilgin.esme.org/BitsAndBytes/KalmanFilterforDummies)
+
 
 Basic equations:
 

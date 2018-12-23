@@ -1,5 +1,10 @@
 Kalman Assignment 2
 
+Imagine Kalman filter as:
+
+x(k) = K(k) * z(k) + (1 - K(k)) * x(k-1) where K is an instant of time
+So basically weigtage to old estimates and current measurement such that both add upto 1 and therefore are inversely proportional.
+
 Basic equations:
 
 x(k+1) = A(orF) * x(k) + B * u(k) + w(k)
@@ -51,6 +56,32 @@ R = [ r1 0
       0  r2 ]
 Increasing R increases the error settling time and the maximum error estimate
 
+When the velocity changes:
+
+Normal values of P - very slow adaptation - longer rise time and settling time - very slow - less reactive
+Therefore, P/esimate is more confident than required - so basically you should give more weightage to recent values.
+Add error at end of every update to P - decreases onfidence level of estimate - but fast reaction - more overshoot - longer settling time
+Then, 
+
+Playing with R:
+Increasing  - increases the rise time - slower reaction - decreases settling time -  less overshoot
+Decreasing  - opp.
+
+Playing with P:
+When p1 = p2:
+Increasing - opp.
+Decreasing - increases the rise time - slower reaction - increases settling time - more overshoot
+
+Error added= 0.1 & R = 0.01
+When p1<p2:
+increases the rise time - slower reaction - decreases settling time - less overshoot
+
+When p1>p2:
+decreases the rise time - faster reaction - increases settling time - more overshoot (not much effect)
+
+Playing with added error:
+Increasing  - increases the rise time - slower reaction - increases settling time - more overshoot
+Decreasing  - opp.
 
 Algorithm Flow:
  
@@ -68,7 +99,7 @@ K = P * H' * inverse(S)
 x(k+1) = x(k) + K * E
 P(K+1) = (I - K * H) * P
 
-It's basically your are assigning weightage to past estimated and curent measurement value and changing it real time.
+It's basically your are assigning weightage to past estimted and curent measurement value and changing it real time.
 
 
 

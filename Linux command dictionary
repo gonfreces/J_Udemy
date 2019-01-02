@@ -1,5 +1,5 @@
 cd <filename>            # Open up a new folder
-cd-                      # Go back in folder
+cd-      or     cd ..    # Go back in folder
 ls -ltr                  # To list all the files in a folder
 chmod +x <filename>      # Remove restriction on a folder for opening up
 python <filename>        # Run a python program from terminal
@@ -32,5 +32,6 @@ L2 cache:              256K
 L3 cache:              4096K
 NUMA node0 CPU(s):     0-3
 
-cat /proc/cpuinfo        # See the processor details - clflush size: 64 then 64 bit
-cd d\ c                  # Open a folder whose name ("d c") contains a space - add a backslash before the space as shown
+cat /proc/cpuinfo      # See the processor details - clflush size: 64 then 64 bit
+cd d\ c                # Open a folder whose name ("d c") contains a space - add a backslash before the space as shown
+mkdir -p ~/name        # Create a new directory or folder 

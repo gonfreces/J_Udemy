@@ -36,3 +36,4 @@ cat /proc/cpuinfo      # See the processor details - clflush size: 64 then 64 bi
 cd d\ c                # Open a folder whose name ("d c") contains a space - add a backslash before the space as shown
 mkdir -p ~/name        # Create a new directory or folder 
 sudo killall nautilus  # If the file explorer is not opening then this cleans all the running process
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv F987672F... #No public key when sudo apt-get update
